@@ -6,7 +6,7 @@
   <link rel="icon" type="image/x-icon" href="images/favicon.webp" />
 
   <!-- Primary Meta -->
-<title>Email Marketing Services in Vadodara | Managed Campaigns & Custom Templates</title>
+<title>Email Marketing Services in India | Managed Campaigns & Custom Templates</title>
 <meta name="description" content="Grow your business with Shriii Tracking Solution’s email marketing—personalized campaigns, segmentation, high inbox reach, and in-depth analytics.">
 <meta name="keywords" content="email, business, marketing, campaigns, subscriber, growth, analysis, audience, India, Vadodara, services, deliverability, segmentation, templates, newsletter, ecommerce">
 <link rel="canonical" href="https://shriiitrackingsolutions.github.io/shriiTrackingEmailMarketing/">
@@ -15,7 +15,7 @@
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Email Marketing Services in Vadodara | Managed Campaigns & Custom Templates">
+<meta property="og:title" content="Email Marketing Services in India | Managed Campaigns & Custom Templates">
 <meta property="og:description" content="Hand‑crafted email templates and fully managed campaigns engineered for inbox placement, engagement, and growth.">
 <meta property="og:url" content="https://shriiitrackingsolutions.github.io/shriiTrackingEmailMarketing/">
 <meta property="og:image" content="https://shriiitrackingsolutions.github.io/shriiTrackingEmailMarketing/images/shriii-tracking-solutions-og-image">
@@ -24,7 +24,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Email Marketing Company in Vadodara">
+<meta name="twitter:title" content="Email Marketing Company in India">
 <meta name="twitter:description" content="Done‑for‑you email marketing—design, segmentation, deliverability, and analytics.">
 <meta name="twitter:image" content="https://shriiitrackingsolutions.github.io/shriiTrackingEmailMarketing/images/shriii-tracking-solutions-og-image">
   
@@ -231,6 +231,11 @@
       letter-spacing: -0.033em;
     }
     .hero-subtitle { color: #eaddfa; }
+
+#templateDesigns video{
+  border-radius: 16px;
+}
+
 
     /* Services */
     .service-card {
@@ -697,6 +702,7 @@ form textarea{
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto me-3">
+          <li class="nav-item"><a class="nav-link" href="#templateDesigns">Email Templates</a></li>
           <li class="nav-item"><a class="nav-link" href="#whyChoose">Why Choose Us</a></li>
           <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
@@ -717,7 +723,7 @@ form textarea{
         <div class="mb-4 col-lg-8" >
           <h1 class="hero-title display-4 mb-3">Unlock Your Growth with Expert Email Marketing</h1>
           <h2 class="hero-subtitle fs-5 fw-normal">
-            Email Marketing Services in Vadodara and beyond. Hand‑crafted templates and managed campaigns engineered for inbox placement, engagement, and business growth.
+            Email Marketing Services in India. Hand‑crafted templates and managed campaigns engineered for inbox placement, engagement, and business growth.
           </h2>
         </div>
         <div class="d-flex flex-wrap gap-3 justify-content-center">
@@ -732,6 +738,18 @@ form textarea{
 
 
 
+
+<section class="py-5 mt-5" id="templateDesigns">
+  <h2 class="text-center fw-bold fs-2 mb-3">Email Marketing Made Beautiful</h2>
+  <p class="text-center text-secondary mb-lg-5 mb-4 mx-auto col-lg-8" >
+    Our designers craft stunning, brand-aligned email templates tailored to your unique vision. Every pixel purposefully designed to engage your audience and boost conversions.
+  </p>
+
+  <video class="card-img" autoplay="" muted="true" loop="true" playsinline="">
+    <source src="images/Continuevideo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</section>
 
     <!-- Services -->
     <section class="py-5" id="whyChoose">
@@ -1030,7 +1048,7 @@ form textarea{
           <div class="d-flex align-items-center mb-3 footerBrand">
             <img loading="lazy" src="images/ShriiTrackingSolutionLogo.webp" alt="Shriii Tracking Solution Logo">
           </div>
-          <p class="small text-secondary">Your local partner for professional web development in Vadodara.</p>
+          <p class="small text-secondary">Your trusted partner for professional email marketing campaigns.</p>
         </div>
 
         <div class="col-md-4">
@@ -1050,15 +1068,20 @@ form textarea{
             </li>
           </ul>
         </div>
+
         <div class="col-md-4">
           <h3 class="fw-semibold mb-3">Get in Touch</h3>
-          <form class="d-flex gap-2">
-            <input type="email" class="form-control form-control-sm" placeholder="Your email address">
+          <form class="d-flex gap-2" id="sunscriber">
+            <input type="email" class="form-control form-control-sm" placeholder="Your email address" name="subscribedEmail" required>
             <button type="submit" class="btn btn-primary btn-sm" >
-              <span class="material-symbols-outlined" >arrow_forward</span>
+              <span class="material-symbols-outlined">arrow_forward</span>
             </button>
           </form>
+          <p id="subscribeThankyou" style="display:none;color:green;font-weight:bold;margin-top:10px;">
+            ✅ Thank you! For Subscribing.
+          </p>
         </div>
+
       </div>
 
       <div class="text-center py-4 mt-4 border-top">
@@ -1072,9 +1095,41 @@ form textarea{
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
    <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
+
+ <script>
+    const sunscriberForm = document.getElementById('sunscriber');
+    const subscriberSuccessMessage = document.getElementById('subscribeThankyou');
+
+    // 🔗 Paste your Google Apps Script Web App URL here
+    // const scriptURL = "https://script.google.com/macros/s/AKfycbwAdGNCKkdB9cMV9Nc5IWHHOcVTDCFbkeHKX1kktbu5F5Wgni2HBMAojdBc06MHDR84/exec";
+
+    const subscriberScriptURL = 'https://script.google.com/macros/s/sdffdsd';
+
+    sunscriberForm.addEventListener('submit', e => {
+      e.preventDefault();
+
+      fetch(subscriberScriptURL, {
+        method: 'POST',
+        body: new FormData(sunscriberForm),
+      })
+        .then(response => {
+          if (response.ok) {
+            subscriberSuccessMessage.style.display = 'block';
+            sunscriberForm.reset();
+          } else {
+            alert('Error submitting form. Please try again.');
+          }
+        })
+        .catch(error => {
+          alert('Error submitting form. Please try again.');
+          console.error('Error:', error);
+        });
+    });
+
+</script>
 
 
+<script>
 // Initialize Testimonial Swiper
 const testimonialSwiper = new Swiper('.testimonialSwiper', {
   loop: true,
