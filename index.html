@@ -1096,37 +1096,36 @@ form textarea{
    <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
- <script>
-    const sunscriberForm = document.getElementById('sunscriber');
-    const subscriberSuccessMessage = document.getElementById('subscribeThankyou');
-
-    // 🔗 Paste your Google Apps Script Web App URL here
-    // const scriptURL = "https://script.google.com/macros/s/AKfycbwAdGNCKkdB9cMV9Nc5IWHHOcVTDCFbkeHKX1kktbu5F5Wgni2HBMAojdBc06MHDR84/exec";
-
-    const subscriberScriptURL = 'https://script.google.com/macros/s/sdffdsd';
-
-    sunscriberForm.addEventListener('submit', e => {
+<script>
+    document.getElementById("sunscriber").addEventListener("submit", async function (e) {
       e.preventDefault();
 
-      fetch(subscriberScriptURL, {
-        method: 'POST',
-        body: new FormData(sunscriberForm),
-      })
-        .then(response => {
-          if (response.ok) {
-            subscriberSuccessMessage.style.display = 'block';
-            sunscriberForm.reset();
-          } else {
-            alert('Error submitting form. Please try again.');
-          }
-        })
-        .catch(error => {
-          alert('Error submitting form. Please try again.');
-          console.error('Error:', error);
-        });
-    });
+      const email = document.querySelector("input[name='subscribedEmail']").value;
+      const url = "https://script.google.com/macros/s/AKfycbx9z9_xp_Zz7VpazI8AxPZle23-_EvIjA_7xRuvgP-7BJ-4WAQGFUWZQQNTZbbtIlge/exec";
 
-</script>
+      try {
+        const res = await fetch(url, {
+          method: "POST",
+          body: new URLSearchParams({ email })
+        });
+
+        const text = await res.text();
+        console.log("Raw response:", text);
+
+        const data = JSON.parse(text);   // manual JSON parsing
+
+        if (data.status === "success") {
+          document.getElementById("subscribeThankyou").style.display = "block";
+          e.target.reset();
+        } else {
+          alert("Error submitting form. Please try again.");
+        }
+      } catch (err) {
+        alert("Error submitting form. Please try again.");
+        console.log("Error:", err);
+      }
+    });
+  </script>
 
 
 <script>
